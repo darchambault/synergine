@@ -1,3 +1,6 @@
 .idea
 synergine.iml
+php/app/cache/
+php/app/logs/
 php/vendor/
+web/bundles/
