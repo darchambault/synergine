@@ -9,9 +9,10 @@ use Symfony\Component\Security\Core\SecurityContext;
 
 class SecurityController extends Controller {
    /**
-    * @Route("/login")
-    * @Template()
+    * --@Route("/login")
+    * --@Template()
     */
+   /*
    public function loginAction() {
       $request = $this->getRequest();
       $session = $request->getSession();
@@ -29,5 +30,20 @@ class SecurityController extends Controller {
          'last_username' => $session->get(SecurityContext::LAST_USERNAME),
          'error' => $error,
       ));
+   }
+   */
+
+   /**
+    * @Route("/login_fb")
+    * @Template()
+    */
+   public function loginFacebookAction(Request $request) {
+      if ($request->attributes->has(SecurityContext::AUTHENTICATION_ERROR)) {
+         $error = $request->attributes->get(SecurityContext::AUTHENTICATION_ERROR);
+      } else {
+         $error = $request->getSession()->get(SecurityContext::AUTHENTICATION_ERROR);
+      }
+
+      return new Response($error);
    }
 }
