@@ -4,3 +4,5 @@ php/app/cache/
 php/app/logs/
 php/vendor/
 web/bundles/
+php/app/config/parameters.ini
+php/app/config/config.yml
