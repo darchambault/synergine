@@ -11,8 +11,17 @@ form.login {
     margin: 0 auto;
 }
 
-form.login input[name=username], form.login input[name=password], button[type=submit] {
+form.login input[name=username], form.login input[name=password], form.login > div {
     display: block;
     margin-left: auto;
     margin-right: auto;
+}
+
+form.login > div.input-xlarge {
+   width: 280px;
+}
+
+form.login button[type=submit] {
+   margin-top: 15px;
+   width: 100%;
 }

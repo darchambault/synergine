@@ -32,18 +32,4 @@ class SecurityController extends Controller {
       ));
    }
    */
-
-   /**
-    * @Route("/login_fb")
-    * @Template()
-    */
-   public function loginFacebookAction(Request $request) {
-      if ($request->attributes->has(SecurityContext::AUTHENTICATION_ERROR)) {
-         $error = $request->attributes->get(SecurityContext::AUTHENTICATION_ERROR);
-      } else {
-         $error = $request->getSession()->get(SecurityContext::AUTHENTICATION_ERROR);
-      }
-
-      return new Response($error);
-   }
 }

@@ -63,11 +63,3 @@ fos_user:
     db_driver: orm
     firewall_name: main
     user_class: Synergine\CoreBundle\Entity\User
-
-fos_facebook:
-      file:   %kernel.root_dir%/../vendor/facebook/src/base_facebook.php
-      alias:  facebook
-      app_id: xxx
-      secret: xxx
-      cookie: true
-      permissions: [email]
