@@ -21,6 +21,8 @@ security:
             form_login:
                 provider: fos_userbundle
                 csrf_provider: form.csrf_provider
+                username_parameter: username
+                password_parameter: password
             logout:       true
             anonymous:    true
 
