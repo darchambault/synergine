@@ -2,18 +2,29 @@
 
 {% block header %}
 <h1 class="login">Login</h1>
-{% endblock %}
+{% endblock header %}
 
 {% block body %}
 <form class="login well form-horizontal" action="{{ path('login_check') }}" method="post">
     {% if error %}
     <div class="alert alert-error">{{ error.message }}</div>
     {% endif %}
-    <input type="text" name="username" class="input-xlarge control-group" placeholder="Email" value="{{ last_username }}">
+    <input type="text" name="username" class="input-xlarge control-group" placeholder="Username" value="{{ last_username }}">
     <input type="password" name="password" class="input-xlarge control-group" placeholder="Password">
-    <button type="submit" class="btn btn-primary input-medium">Sign in</button>
+
+    <div class="input-xlarge">
+        <label class="checkbox">
+            <input type="checkbox" id="remember_me" name="remember_me" value="1" /> Remember me
+        </label>
+        <button type="submit" class="btn btn-primary input-medium">Login</button>
+    </div>
+
+    <div class="register">
+        or<br/><a href="">Register</a>
+    </div>
 </form>
-{% endblock %}
+{% endblock body %}
+
 
 {% block footer %}
-{% endblock %}
+{% endblock footer %}
