@@ -2,6 +2,18 @@ body > header {
     margin-bottom: 20px;
 }
 
+body > footer {
+   margin-top: 20px;
+   text-align: center;
+}
+
+.form-actions {
+   border: none;
+   background-color: transparent;
+}
+
+/** login **/
+
 h1.login {
     text-align: center;
 }
@@ -30,4 +42,11 @@ form.login > div.register {
    margin-top: 10px;
    line-height: 25px;
    text-align: center;
+}
+
+/** registration **/
+
+form.registration {
+   width: 800px;
+   margin: 0 auto;
 }

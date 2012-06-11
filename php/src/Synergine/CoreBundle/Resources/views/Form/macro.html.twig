@@ -1,0 +1,7 @@
+{% macro hasErrors(field) %}
+{% spaceless %}
+    {% if form_errors(field)|length > 1 %}
+        {{ 'error' }}
+    {% endif %}
+{% endspaceless %}
+{% endmacro %}
