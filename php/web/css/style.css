@@ -25,3 +25,9 @@ form.login button[type=submit] {
    margin-top: 15px;
    width: 100%;
 }
+
+form.login > div.register {
+   margin-top: 10px;
+   line-height: 25px;
+   text-align: center;
+}
