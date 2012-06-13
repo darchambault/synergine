@@ -22,7 +22,8 @@ twig:
     strict_variables: %kernel.debug%
     form:
         resources:
-            - 'SynergineCoreBundle:Form:theme.html.twig'
+#            - 'SynergineCoreBundle:Form:theme.html.twig'
+            - 'MopaBootstrapBundle:Form:fields.html.twig'
 
 # Assetic Configuration
 assetic:
@@ -66,3 +67,9 @@ fos_user:
     db_driver: orm
     firewall_name: main
     user_class: Synergine\CoreBundle\Entity\User
+
+mopa_bootstrap:
+    form:
+        show_legend: false
+        show_child_legend: false
+        error_type: inline

@@ -14,3 +14,5 @@ SensioDistributionBundle 41a6c5caed65f02bb09c95a90579f047616471fd
 SensioGeneratorBundle 83b768a487a6878f2bc2ad6859bd61a3651a7885
 AsseticBundle v1.0.1
 FOSUserBundle 1.2.0
+twittersbootstrap v2.0.4
+MopaBootstrapBundle 9519ba5e0b0d631cdc0ef71aada7275dada501d3

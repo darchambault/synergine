@@ -7,6 +7,7 @@
 
 {% block field_rows %}
 {% spaceless %}
+    {{ form_errors(form) }}
     {% for child in form %}
         {{ form_row(child) }}
     {% endfor %}
@@ -21,7 +22,7 @@
     <div class="control-group {{macro.hasErrors(form)}}">
         {{ form_label(form) }}
         <div class="controls">
-            {{ form_widget(form, _context) }}
+            {{ form_widget(form) }}
             {{ form_errors(form) }}
         </div>
     </div>
