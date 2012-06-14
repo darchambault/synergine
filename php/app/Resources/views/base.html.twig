@@ -9,18 +9,19 @@
     <title>{% block title %}Synergine{% endblock %}</title>
     <meta name="description" content="" />
 
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}" />
-    <style>
-        body {
-            padding-top: 60px;
-            padding-bottom: 40px;
-        }
-    </style>
-    <link rel="stylesheet" href="{{ asset('css/bootstrap-responsive.min.css') }}" />
-    <link rel="stylesheet" href="{{ asset('css/darkstrap.css') }}" />
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}" />
+    {% stylesheets filter='cssrewrite,?yui_css'
+       '@MopaBootstrapBundle/Resources/bootstrap/docs/assets/css/bootstrap.css'
+       'css/navbar.css'
+       '@MopaBootstrapBundle/Resources/bootstrap/docs/assets/css/bootstrap-responsive.css'
+       'css/darkstrap.css'
+       'css/style.css'
+    %}
+    <link href="{{ asset_url }}" type="text/css" rel="stylesheet"
+          media="screen" />
+    {% endstylesheets %}
+
     {% block stylesheets %}{% endblock %}
 
 	<script src="{{ asset('js/libs/modernizr-2.5.3-respond-1.1.0.min.js') }}"></script>
@@ -92,10 +93,14 @@
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="{{ asset('js/libs/jquery-1.7.2.min.js') }}"><\/script>')</script>
 
-<script src="{{ asset('js/libs/bootstrap/bootstrap.min.js') }}"></script>
+{% javascripts filter='?yui_js'
+    '@MopaBootstrapBundle/Resources/bootstrap/js/*.js'
+    'js/plugins.js'
+    'js/script.js'
+%}
+<script src="{{ asset_url }}"></script>
+{% endjavascripts %}
 
-<script src="{{ asset('js/plugins.js') }}"></script>
-<script src="{{ asset('js/script.js') }}"></script>
 {% block javascripts %}{% endblock %}
 
 <script>

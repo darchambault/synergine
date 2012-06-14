@@ -7,6 +7,10 @@ body > footer {
    text-align: center;
 }
 
+form div.alert p {
+   margin-bottom: 0;
+}
+
 .form-actions {
    border: none;
    background-color: transparent;
@@ -49,4 +53,16 @@ form.login > div.register {
 form.registration {
    width: 800px;
    margin: 0 auto;
+}
+
+form.registration fieldset {
+   margin-top: 18px;
+}
+
+form.registration input {
+   width: 270px;
+}
+
+form.registration input[type=password] {
+   width: 150px;
 }

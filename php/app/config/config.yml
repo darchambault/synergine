@@ -22,7 +22,6 @@ twig:
     strict_variables: %kernel.debug%
     form:
         resources:
-#            - 'SynergineCoreBundle:Form:theme.html.twig'
             - 'MopaBootstrapBundle:Form:fields.html.twig'
 
 # Assetic Configuration
@@ -34,8 +33,10 @@ assetic:
         cssrewrite: ~
         # closure:
         #     jar: %kernel.root_dir%/java/compiler.jar
-        # yui_css:
-        #     jar: %kernel.root_dir%/java/yuicompressor-2.4.2.jar
+        yui_css:
+            jar: %kernel.root_dir%/Resources/java/yuicompressor-2.4.7.jar
+        yui_js:
+            jar: %kernel.root_dir%/Resources/java/yuicompressor-2.4.7.jar
 
 # Doctrine Configuration
 doctrine:
@@ -67,6 +68,14 @@ fos_user:
     db_driver: orm
     firewall_name: main
     user_class: Synergine\CoreBundle\Entity\User
+    group:
+        group_class: Synergine\CoreBundle\Entity\Group
+    registration:
+        confirmation:
+            enabled: true
+    from_email:
+        address: dominique.archambault@gmail.com
+        sender_name: Synergine
 
 mopa_bootstrap:
     form:

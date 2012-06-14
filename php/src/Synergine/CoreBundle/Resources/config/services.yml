@@ -1,0 +1,5 @@
+services:
+    synergine_user.user_provider:
+        class: Synergine\CoreBundle\Security\Provider\UserProvider
+        public: false
+        arguments: ["@fos_user.user_manager"]

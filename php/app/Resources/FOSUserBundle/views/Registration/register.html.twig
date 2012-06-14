@@ -4,19 +4,6 @@
 <h1 class="login">Registration</h1>
 {% endblock header %}
 
-{% form_theme form _self %}
-
-{% block field_label %}
-{% spaceless %}
-    {% set attr = attr|merge({'class': attr.class|default('') ~ ' control-label'}) %}
-    {% set attr = attr|merge({'for': id}) %}
-    {% if required %}
-        {% set attr = attr|merge({'class': attr.class|default('') ~ ' required'}) %}
-    {% endif %}
-    <label{% for attrname,attrvalue in attr %} {{attrname}}="{{attrvalue}}"{% endfor %}>{{ id|trans([], 'FOSUserBundle') }}</label>
-{% endspaceless %}
-{% endblock field_label %}
-
 {% block body %}
 <form class="registration well form-horizontal" action="{{ path('fos_user_registration_register') }}" {{ form_enctype(form) }} method="POST" class="fos_user_registration_register">
     <fieldset>

@@ -3,5 +3,5 @@ synergine.iml
 php/app/cache/
 php/app/logs/
 php/vendor/
-web/bundles/
+php/web/bundles/
 php/app/config/parameters.ini
