@@ -1,0 +1,18 @@
+{% block generic_label %}
+{% spaceless %}
+{% if required %}
+{% set attr = attr|merge({'class': attr.class|default('') ~ ' required'}) %}
+{% endif %}
+{% set attr = attr|merge({'class': attr.class|default('') ~ ' control-label'}) %}
+<label{% for attrname,attrvalue in attr %} {{attrname}}="{{attrvalue}}"{% endfor %}>
+{{ id|trans }}
+{% if required %}*{% endif %}
+{% if widget_add_btn %}
+{{ block('field_widget_add_btn') }}
+{% endif %}
+{% if help_label %}
+<p class="help-block">{{ help_label|trans }}</p>
+{% endif %}
+</label>
+{% endspaceless %}
+{% endblock %}

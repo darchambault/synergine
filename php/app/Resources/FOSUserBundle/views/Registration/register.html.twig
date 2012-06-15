@@ -4,27 +4,6 @@
 <h1 class="login">Registration</h1>
 {% endblock header %}
 
-{% form_theme form _self %}
-
-{% block generic_label %}
-{% spaceless %}
-{% if required %}
-{% set attr = attr|merge({'class': attr.class|default('') ~ ' required'}) %}
-{% endif %}
-{% set attr = attr|merge({'class': attr.class|default('') ~ ' control-label'}) %}
-<label{% for attrname,attrvalue in attr %} {{attrname}}="{{attrvalue}}"{% endfor %}>
-{{ id|trans([], 'FOSUserBundle') }}
-{% if required %}*{% endif %}
-{% if widget_add_btn %}
-{{ block('field_widget_add_btn') }}
-{% endif %}
-{% if help_label %}
-<p class="help-block">{{ help_label|trans }}</p>
-{% endif %}
-</label>
-{% endspaceless %}
-{% endblock %}
-
 {% block body %}
 <form class="registration well form-horizontal" action="{{ path('fos_user_registration_register') }}" {{ form_enctype(form) }} method="POST" class="fos_user_registration_register">
     <fieldset>

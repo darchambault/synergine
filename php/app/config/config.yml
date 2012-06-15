@@ -23,6 +23,7 @@ twig:
     form:
         resources:
             - 'MopaBootstrapBundle:Form:fields.html.twig'
+            - 'SynergineCoreBundle:Form:fields.html.twig'
 
 # Assetic Configuration
 assetic:
