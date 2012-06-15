@@ -20,6 +20,7 @@ class AppKernel extends Kernel
             new FOS\UserBundle\FOSUserBundle(),
             new Mopa\Bundle\BootstrapBundle\MopaBootstrapBundle(),
             new Synergine\CoreBundle\SynergineCoreBundle(),
+            new Synergine\UserBundle\SynergineUserBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

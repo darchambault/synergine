@@ -67,9 +67,9 @@ jms_security_extra:
 fos_user:
     db_driver: orm
     firewall_name: main
-    user_class: Synergine\CoreBundle\Entity\User
+    user_class: Synergine\UserBundle\Entity\User
     group:
-        group_class: Synergine\CoreBundle\Entity\Group
+        group_class: Synergine\UserBundle\Entity\Group
     registration:
         confirmation:
             enabled: true

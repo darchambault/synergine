@@ -1,6 +1,6 @@
 <?php
 
-namespace Synergine\CoreBundle\Entity;
+namespace Synergine\UserBundle\Entity;
 
 use FOS\UserBundle\Entity\Group as BaseGroup;
 use Doctrine\ORM\Mapping as ORM;

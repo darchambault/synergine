@@ -1,9 +1,10 @@
 <?php
 
-namespace Synergine\CoreBundle\Entity;
+namespace Synergine\UserBundle\Entity;
 
 use FOS\UserBundle\Entity\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity
@@ -18,16 +19,11 @@ class User extends BaseUser {
    protected $id;
 
    /**
-    * @ORM\ManyToMany(targetEntity="Synergine\CoreBundle\Entity\Group")
-    * @ORM\JoinTable(name="fos_user_user_group",
+    * @ORM\ManyToMany(targetEntity="Synergine\UserBundle\Entity\Group")
+    * @ORM\JoinTable(name="fos_user_group",
     *      joinColumns={@ORM\JoinColumn(name="user_id", referencedColumnName="id")},
     *      inverseJoinColumns={@ORM\JoinColumn(name="group_id", referencedColumnName="id")}
     * )
     */
    protected $groups;
-
-   public function __construct() {
-      parent::__construct();
-      // your own logic
-   }
 }

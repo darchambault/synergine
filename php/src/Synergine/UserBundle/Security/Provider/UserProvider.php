@@ -1,6 +1,6 @@
 <?php
 
-namespace Synergine\CoreBundle\Security\Provider;
+namespace Synergine\UserBundle\Security\Provider;
 
 use FOS\UserBundle\Model\UserManagerInterface;
 use Symfony\Component\Security\Core\Exception\UsernameNotFoundException;
