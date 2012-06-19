@@ -1,0 +1,12 @@
+{% extends "::base.html.twig" %}
+
+{% block header %}
+<h1 class="reset_request">Password Reset Request</h1>
+{% endblock header %}
+
+{% block body %}
+<div class="reset_request reset_request_checkEmail well">
+    <p>{{ 'resetting.check_email'|trans({'%email%': email}, 'FOSUserBundle') }}</p>
+    <a href="{{ path('fos_user_security_login') }}">Back to login</a>
+</div>
+{% endblock body %}

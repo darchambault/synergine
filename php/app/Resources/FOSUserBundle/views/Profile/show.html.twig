@@ -1,0 +1,21 @@
+{% extends "::base.html.twig" %}
+
+{% block header %}
+<h1 class="profile">Profile</h1>
+{% endblock header %}
+
+{% block flashes %}
+{% for key, message in app.session.getFlashes() %}
+<div class="profile alert alert-info {{ key }}">
+    {{ message|trans({}, 'FOSUserBundle') }}
+</div>
+{% endfor %}
+{% endblock flashes %}
+
+{% block body %}
+<div class="profile well">
+    <p>{{ 'profile.show.username'|trans({}, 'FOSUserBundle') }}: {{ user.username }}</p>
+    <p>{{ 'profile.show.email'|trans({}, 'FOSUserBundle') }}: {{ user.email }}</p>
+    <a class="btn btn-primary" href="{{ path('fos_user_profile_edit') }}">Edit</a>
+</div>
+{% endblock body %}

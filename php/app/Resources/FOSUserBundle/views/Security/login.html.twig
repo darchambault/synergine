@@ -17,11 +17,15 @@
         <label class="checkbox">
             <input type="checkbox" id="remember_me" name="remember_me" value="on" /> Remember me
         </label>
+
+
+
         <button type="submit" class="btn btn-primary input-medium">Login</button>
     </div>
 
-    <div class="register">
-        or<br/><a href="{{ path('fos_user_registration_register') }}">Register</a>
+    <div class="register input-xlarge">
+        <a href="{{ path('fos_user_registration_register') }}">Register</a>
+        <a href="{{ path('fos_user_resetting_request') }}">I forgot my password</a>
     </div>
 </form>
 {% endblock body %}

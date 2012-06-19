@@ -1,11 +1,11 @@
 {% extends "::base.html.twig" %}
 
 {% block header %}
-<h1 class="login">Registration</h1>
+<h1 class="registration">Registration</h1>
 {% endblock header %}
 
 {% block body %}
-<form class="registration well form-horizontal" action="{{ path('fos_user_registration_register') }}" {{ form_enctype(form) }} method="POST" class="fos_user_registration_register">
+<form class="registration well form-horizontal" action="{{ path('fos_user_registration_register') }}" {{ form_enctype(form) }} method="POST">
     <fieldset>
         {{ form_widget(form) }}
     </fieldset>

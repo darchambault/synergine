@@ -1,0 +1,24 @@
+{% extends "::base.html.twig" %}
+
+{% block header %}
+<h1 class="reset_request">Password Reset Request</h1>
+{% endblock header %}
+
+{% block body %}
+<form class="reset_request well form-horizontal" action="{{ path('fos_user_resetting_send_email') }}" method="POST">
+    <fieldset>
+        {% if invalid_username is defined %}
+        <div class="alert alert-error">{{ 'resetting.request.invalid_username'|trans({'%username%': invalid_username}, 'FOSUserBundle') }}</div>
+        {% endif %}
+        <div class="control-group">
+            <label class="control-label" for="username">{{ 'resetting.request.username'|trans({}, 'FOSUserBundle') }}</label>
+            <div class="controls">
+                <input class="input-xlarge" type="text" id="username" name="username" />
+            </div>
+        </div>
+    </fieldset>
+    <div class="form-actions">
+        <button class="btn btn-primary" type="submit">{{ 'resetting.request.submit'|trans({}, 'FOSUserBundle') }}</button>
+    </div>
+</form>
+{% endblock body %}

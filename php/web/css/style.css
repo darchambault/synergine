@@ -45,10 +45,17 @@ form.login button[type=submit] {
 form.login > div.register {
    margin-top: 10px;
    line-height: 25px;
-   text-align: center;
+}
+
+form.login > div.register a:last-of-type {
+   float: right;
 }
 
 /** registration **/
+
+h1.registration {
+   text-align: center;
+}
 
 form.registration {
    width: 800px;
@@ -64,5 +71,63 @@ form.registration input {
 }
 
 form.registration input[type=password] {
+   width: 150px;
+}
+
+/** resetting **/
+
+h1.reset_request,
+h1.password_reset {
+   text-align: center;
+}
+
+form.reset_request,
+div.reset_request,
+form.password_reset {
+   width: 600px;
+   margin: 0 auto;
+}
+
+form.reset_request label.control-label,
+form.password_reset label.control-label {
+   width: 200px;
+}
+
+form.reset_request .controls,
+form.password_reset .controls {
+   margin-left: 220px;
+}
+
+form.reset_request div.form-actions,
+form.password_reset div.form-actions {
+   padding-left: 220px;
+}
+
+/** profile **/
+
+h1.profile {
+   text-align: center;
+}
+
+div.profile,
+form.profile,
+div.profile.alert {
+   width: 800px;
+   margin: 0 auto;
+}
+
+div.profile.alert {
+   margin-top: 10px;
+}
+
+form.profile fieldset {
+   margin-top: 18px;
+}
+
+form.profile input {
+   width: 270px;
+}
+
+form.profile input[type=password] {
    width: 150px;
 }
