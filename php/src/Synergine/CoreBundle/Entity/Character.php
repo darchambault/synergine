@@ -231,8 +231,8 @@ class Character {
    protected $stunDamage;
 
    /**
-    * @ORM\OneToMany(targetEntity="Wound", mappedBy="character")
-    * @var Wound[]
+    * @ORM\OneToMany(targetEntity="CharacterWound", mappedBy="character")
+    * @var CharacterWound[]
     */
    protected $wounds;
 
