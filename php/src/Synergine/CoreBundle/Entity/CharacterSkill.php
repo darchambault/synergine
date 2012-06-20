@@ -26,8 +26,35 @@ class CharacterSkill {
    protected $skill;
 
    /**
-    * @ORM\Column(type="integer")
+    * @ORM\Column(type="smallint")
     * @var int
     */
    protected $level;
+
+   /**
+    * Returns the character this relates to
+    *
+    * @return Character
+    */
+   public function getCharacter() {
+      return $this->character;
+   }
+
+   /**
+    * Returns the skill this relates to
+    *
+    * @return Skill
+    */
+   public function getSkill() {
+      return $this->skill;
+   }
+
+   /**
+    * Returns the level of this skill for this character
+    *
+    * @return int
+    */
+   public function getLevel() {
+      return $this->level;
+   }
 }

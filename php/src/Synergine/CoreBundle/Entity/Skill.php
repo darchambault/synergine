@@ -29,4 +29,31 @@ class Skill {
     * @var SkillGroup
     */
    protected $group;
+
+   /**
+    * Returns the standard skill's ID
+    *
+    * @return int
+    */
+   public function getId() {
+      return $this->id;
+   }
+
+   /**
+    * Returns the standard skill's name
+    *
+    * @return string
+    */
+   public function getName() {
+      return $this->name;
+   }
+
+   /**
+    * Returns the standard skill's group
+    *
+    * @return SkillGroup
+    */
+   public function getGroup() {
+      return $this->group;
+   }
 }

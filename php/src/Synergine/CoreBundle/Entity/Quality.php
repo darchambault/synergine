@@ -28,4 +28,31 @@ class Quality {
     * @var int
     */
    protected $bpCost;
+
+   /**
+    * Returns this quality's ID
+    *
+    * @return int
+    */
+   public function getId() {
+      return $this->id;
+   }
+
+   /**
+    * Returns this quality's name
+    *
+    * @return string
+    */
+   public function getName() {
+      return $this->name;
+   }
+
+   /**
+    * Returns this quality's BP cost
+    *
+    * @return int
+    */
+   public function getBpCost() {
+      return $this->bpCost;
+   }
 }

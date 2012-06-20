@@ -28,4 +28,31 @@ class SkillGroup {
     * @var Skill[]
     */
    protected $skills;
+
+   /**
+    * Returns this group's ID
+    *
+    * @return int
+    */
+   public function getId() {
+      return $this->id;
+   }
+
+   /**
+    * Returns this group's name
+    *
+    * @return string
+    */
+   public function getName() {
+      return $this->name;
+   }
+
+   /**
+    * Returns this group's skills
+    *
+    * @return Skill[]
+    */
+   public function getSkills() {
+      return $this->skills;
+   }
 }

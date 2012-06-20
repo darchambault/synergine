@@ -6,30 +6,25 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity
- * @ORM\Table(name="knowledge_skill")
+ * @ORM\Table(name="skill_knowledge")
  */
-class KnowledgeSkill {
+class KnowledgeSkill extends Skill {
    const TYPE_ACADEMIC = 0;
    const TYPE_STREETWISE = 1;
    const TYPE_INTEREST = 2;
 
    /**
-    * @ORM\Id
-    * @ORM\Column(type="integer")
-    * @ORM\GeneratedValue(strategy="AUTO")
-    * @var int
-    */
-   protected $id;
-
-   /**
-    * @ORM\Column(type="string", length=255)
-    * @var string
-    */
-   protected $name;
-
-   /**
-    * @ORM\Column(type="integer")
+    * @ORM\Column(type="smallint")
     * @var int
     */
    protected $type;
+
+   /**
+    * Returns the knowledge skill's type
+    *
+    * @return int
+    */
+   public function getType() {
+      return $this->type;
+   }
 }

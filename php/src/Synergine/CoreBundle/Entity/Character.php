@@ -53,19 +53,19 @@ class Character {
    protected $alias;
 
    /**
-    * @ORM\Column(type="integer")
+    * @ORM\Column(type="smallint")
     * @var int
     */
    protected $metatype;
 
    /**
-    * @ORM\Column(type="integer")
+    * @ORM\Column(type="smallint")
     * @var int
     */
    protected $age;
 
    /**
-    * @ORM\Column(type="integer")
+    * @ORM\Column(type="smallint")
     * @var int
     */
    protected $sex;
@@ -89,86 +89,86 @@ class Character {
    protected $currentKarma;
 
    /**
-    * @ORM\Column(type="integer", name="street_cred")
+    * @ORM\Column(type="smallint", name="street_cred")
     * @var int
     */
    protected $streetCred;
 
    /**
-    * @ORM\Column(type="integer")
+    * @ORM\Column(type="smallint")
     * @var int
     */
    protected $notoriety;
 
    /**
-    * @ORM\Column(type="integer")
+    * @ORM\Column(type="smallint")
     * @var int
     */
    protected $body;
 
    /**
-    * @ORM\Column(type="integer")
+    * @ORM\Column(type="smallint")
     * @var int
     */
    protected $agility;
 
    /**
-    * @ORM\Column(type="integer")
+    * @ORM\Column(type="smallint")
     * @var int
     */
    protected $reaction;
 
    /**
-    * @ORM\Column(type="integer")
+    * @ORM\Column(type="smallint")
     * @var int
     */
    protected $strength;
 
    /**
-    * @ORM\Column(type="integer")
+    * @ORM\Column(type="smallint")
     * @var int
     */
    protected $charisma;
 
    /**
-    * @ORM\Column(type="integer")
+    * @ORM\Column(type="smallint")
     * @var int
     */
    protected $intuition;
 
    /**
-    * @ORM\Column(type="integer")
+    * @ORM\Column(type="smallint")
     * @var int
     */
    protected $logic;
 
    /**
-    * @ORM\Column(type="integer")
+    * @ORM\Column(type="smallint")
     * @var int
     */
    protected $willpower;
 
    /**
-    * @ORM\Column(type="integer")
+    * @ORM\Column(type="smallint")
     * @var int
     */
    protected $edge;
 
    /**
-    * @ORM\Column(type="integer", name="available_edge")
+    * @ORM\Column(type="smallint", name="available_edge")
     * @var int
     */
    protected $availableEdge;
 
    /**
-    * @ORM\Column(type="integer")
+    * @ORM\Column(type="smallint")
     * @var int
     */
    protected $magic;
 
    /**
     * @ORM\OneToMany(targetEntity="CharacterSkill", mappedBy="character")
-    * @var CharacterSkill[]
+    * @var Skill[]
     */
    protected $skills;
 
@@ -219,13 +219,13 @@ class Character {
    protected $contactOwner;
 
    /**
-    * @ORM\Column(type="integer", name="physical_damage")
+    * @ORM\Column(type="smallint", name="physical_damage")
     * @var int
     */
    protected $physicalDamage;
 
    /**
-    * @ORM\Column(type="integer", name="stun_damage")
+    * @ORM\Column(type="smallint", name="stun_damage")
     * @var int
     */
    protected $stunDamage;
@@ -236,12 +236,33 @@ class Character {
     */
    protected $wounds;
 
+   /**
+    * @ORM\OneToMany(targetEntity="CharacterEquipment", mappedBy="character")
+    * @var CharacterEquipment[]
+    */
    protected $inventory;
-   protected $implants;
+
+   /**
+    * @ORM\OneToMany(targetEntity="CharacterWeaponEquipment", mappedBy="character")
+    * @var CharacterWeaponEquipment[]
+    */
    protected $weapons;
+
+   /**
+    * @ORM\OneToMany(targetEntity="CharacterArmorEquipment", mappedBy="character")
+    * @var CharacterArmorEquipment[]
+    */
    protected $armor;
+
+   /**
+    * @ORM\OneToMany(targetEntity="CharacterImplantEquipment", mappedBy="character")
+    * @var CharacterImplantEquipment[]
+    */
+   protected $implants;
+
    protected $vehicles;
    protected $ids;
+   protected $licences;
    protected $commlinks;
    protected $programs;
    protected $spells;

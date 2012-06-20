@@ -36,4 +36,40 @@ class Game {
     * @var Character[]
     */
    protected $characters;
+
+   /**
+    * Returns this game's ID
+    *
+    * @return int
+    */
+   public function getId() {
+      return $this->id;
+   }
+
+   /**
+    * Returns this game's name
+    *
+    * @return string
+    */
+   public function getName() {
+      return $this->name;
+   }
+
+   /**
+    * Returns this game's game master
+    *
+    * @return User
+    */
+   public function getGameMaster() {
+      return $this->gameMaster;
+   }
+
+   /**
+    * Returns this game's characters
+    *
+    * @return Character[]
+    */
+   public function getCharacters() {
+      return $this->characters;
+   }
 }

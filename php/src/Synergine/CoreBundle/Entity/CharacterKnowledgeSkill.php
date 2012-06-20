@@ -6,7 +6,7 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity
- * @ORM\Table(name="character_knowledge_skill")
+ * @ORM\Table(name="character_skill_knowledge")
  */
 class CharacterKnowledgeSkill {
    /**
@@ -20,14 +20,41 @@ class CharacterKnowledgeSkill {
    /**
     * @ORM\Id
     * @ORM\ManyToOne(targetEntity="KnowledgeSkill")
-    * @ORM\JoinColumn(name="knowledge_skill_id", referencedColumnName="id")
+    * @ORM\JoinColumn(name="skill_id", referencedColumnName="id")
     * @var KnowledgeSkill
     */
-   protected $knowledgeSkill;
+   protected $skill;
 
    /**
-    * @ORM\Column(type="integer")
+    * @ORM\Column(type="smallint")
     * @var int
     */
    protected $level;
+
+   /**
+    * Returns the character this relates to
+    *
+    * @return Character
+    */
+   public function getCharacter() {
+      return $this->character;
+   }
+
+   /**
+    * Returns the skill this relates to
+    *
+    * @return KnowledgeSkill
+    */
+   public function getKnowledgeSkill() {
+      return $this->skill;
+   }
+
+   /**
+    * Returns the level of this knowledge skill for this character
+    *
+    * @return int
+    */
+   public function getLevel() {
+      return $this->level;
+   }
 }

@@ -22,4 +22,22 @@ class Maneuver {
     * @var string
     */
    protected $name;
+
+   /**
+    * Returns this maneuver's ID
+    *
+    * @return int
+    */
+   public function getId() {
+      return $this->id;
+   }
+
+   /**
+    * Returns this maneuver's name
+    *
+    * @return string
+    */
+   public function getName() {
+      return $this->name;
+   }
 }
