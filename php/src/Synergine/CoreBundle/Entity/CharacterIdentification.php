@@ -36,6 +36,12 @@ class CharacterIdentification {
    protected $rating;
 
    /**
+    * @ORM\Column(type="integer")
+    * @var int
+    */
+   protected $nuyens;
+
+   /**
     * @ORM\OneToMany(targetEntity="Licence", mappedBy="characterId")
     * @var Licence[]
     */
@@ -66,6 +72,15 @@ class CharacterIdentification {
     */
    public function getRating() {
       return $this->rating;
+   }
+
+   /**
+    * Returns this ID's available nuyens
+    *
+    * @return int
+    */
+   public function getNuyens() {
+      return $this->nuyens;
    }
 
    /**
@@ -102,5 +117,14 @@ class CharacterIdentification {
     */
    public function setRating($rating) {
       $this->rating = $rating;
+   }
+
+   /**
+    * Sets the character identification's available nuyens
+    *
+    * @param int $nuyens
+    */
+   public function setNuyens($nuyens) {
+      $this->nuyens = $nuyens;
    }
 }

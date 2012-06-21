@@ -642,6 +642,42 @@ class Character {
    }
 
    /**
+    * Returns the character's public awareness
+    *
+    * @return int
+    */
+   public function getPublicAwareness() {
+      return ($this->getStreetCred() + $this->getNotoriety());
+   }
+
+   /**
+    * Returns the character's initiative
+    *
+    * @return int
+    */
+   public function getInitiative() {
+      return ($this->getReaction() + $this->getIntuition());
+   }
+
+   /**
+    * Returns the character's maximum physical damage
+    *
+    * @return int
+    */
+   public function getMaximumPhysicalDamage() {
+      return (ceil($this->getBody() / 2) + 8);
+   }
+
+   /**
+    * Returns the character's maximum stun damage
+    *
+    * @return int
+    */
+   public function getMaximumStunDamage() {
+      return (ceil($this->getWillpower() / 2) + 8);
+   }
+
+   /**
     * Sets the game which the character belongs to
     *
     * @param \Synergine\CoreBundle\Entity\Game $game
