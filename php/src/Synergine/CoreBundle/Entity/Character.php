@@ -189,18 +189,16 @@ class Character {
    protected $maneuvers;
 
    /**
-    * @ORM\OneToMany(targetEntity="Character", mappedBy="contactOwner")
-    * @var Character[]
+    * @ORM\OneToMany(targetEntity="Contact", mappedBy="ownerCharacter")
+    * @var Contact[]
     */
    protected $contacts;
 
    /**
-    * @ORM\Id
-    * @ORM\ManyToOne(targetEntity="Character")
-    * @ORM\JoinColumn(name="contact_owner_id")
-    * @var Character
+    * @ORM\OneToOne(targetEntity="Contact", mappedBy="character")
+    * @var Contact
     */
-   protected $contactOwner;
+   protected $contact;
 
    /**
     * @ORM\Column(type="smallint", name="physical_damage")
@@ -527,19 +525,19 @@ class Character {
    /**
     * Returns the character's contacts
     *
-    * @return Character[]
+    * @return Contact[]
     */
    public function getContacts() {
       return $this->contacts;
    }
 
    /**
-    * Returns the character's contact owner
+    * Returns the character's contact
     *
-    * @return \Synergine\CoreBundle\Entity\Character
+    * @return \Synergine\CoreBundle\Entity\Contact
     */
-   public function getContactOwner() {
-      return $this->contactOwner;
+   public function getContact() {
+      return $this->contact;
    }
 
    /**
@@ -893,12 +891,12 @@ class Character {
    }
 
    /**
-    * Sets the character's contact owner
+    * Sets the character's contact
     *
-    * @param \Synergine\CoreBundle\Entity\Character $contactOwner
+    * @param \Synergine\CoreBundle\Entity\Contact $contact
     */
-   public function setContactOwner(Character $contactOwner) {
-      $this->contactOwner = $contactOwner;
+   public function setContact(Contact $contact) {
+      $this->contact = $contact;
    }
 
    /**

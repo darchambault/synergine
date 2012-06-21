@@ -19,6 +19,7 @@ class CharacterLanguageSkill {
    /**
     * @ORM\Id
     * @ORM\ManyToOne(targetEntity="LanguageSkill")
+    * @ORM\JoinColumn(name="language_skill_id")
     * @var LanguageSkill
     */
    protected $languageSkill;

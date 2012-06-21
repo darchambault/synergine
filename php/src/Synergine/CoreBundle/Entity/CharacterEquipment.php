@@ -18,14 +18,12 @@ class CharacterEquipment {
    protected $id;
 
    /**
-    * @ORM\Id
     * @ORM\ManyToOne(targetEntity="Character")
     * @var Character
     */
    protected $character;
 
    /**
-    * @ORM\Id
     * @ORM\ManyToOne(targetEntity="Equipment")
     * @var Equipment
     */

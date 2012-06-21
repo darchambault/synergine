@@ -19,6 +19,7 @@ class CharacterKnowledgeSkill {
    /**
     * @ORM\Id
     * @ORM\ManyToOne(targetEntity="KnowledgeSkill")
+    * @ORM\JoinColumn(name="knowledge_skill_id")
     * @var KnowledgeSkill
     */
    protected $knowledgeSkill;

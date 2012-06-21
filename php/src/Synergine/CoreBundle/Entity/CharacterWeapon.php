@@ -18,7 +18,7 @@ class CharacterWeapon {
    protected $characterEquipment;
 
    /**
-    * @ORM\Column(type="integer")
+    * @ORM\Column(type="integer", name="current_ammo")
     * @var int
     */
    protected $currentAmmo;
