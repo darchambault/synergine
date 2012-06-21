@@ -243,19 +243,19 @@ class Character {
    protected $inventory;
 
    /**
-    * @ORM\OneToMany(targetEntity="CharacterWeaponEquipment", mappedBy="character")
+    * @ORM\OneToMany(targetEntity="CharacterWeapon", mappedBy="character")
     * @var CharacterWeaponEquipment[]
     */
    protected $weapons;
 
    /**
-    * @ORM\OneToMany(targetEntity="CharacterArmorEquipment", mappedBy="character")
+    * @ORM\OneToMany(targetEntity="CharacterArmor", mappedBy="character")
     * @var CharacterArmorEquipment[]
     */
    protected $armor;
 
    /**
-    * @ORM\OneToMany(targetEntity="CharacterImplantEquipment", mappedBy="character")
+    * @ORM\OneToMany(targetEntity="CharacterImplant", mappedBy="character")
     * @var CharacterImplantEquipment[]
     */
    protected $implants;

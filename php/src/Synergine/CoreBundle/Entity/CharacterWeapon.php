@@ -6,9 +6,9 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity
- * @ORM\Table(name="character_equipment_implant")
+ * @ORM\Table(name="character_weapon")
  */
-class CharacterImplantEquipment {
+class CharacterWeapon {
    /**
     * @ORM\Id
     * @ORM\ManyToOne(targetEntity="Character")
@@ -19,11 +19,11 @@ class CharacterImplantEquipment {
 
    /**
     * @ORM\Id
-    * @ORM\ManyToOne(targetEntity="ImplantEquipment")
-    * @ORM\JoinColumn(name="equipment_implant_id", referencedColumnName="id")
-    * @var ImplantEquipment
+    * @ORM\ManyToOne(targetEntity="Weapon")
+    * @ORM\JoinColumn(name="weapon_id", referencedColumnName="id")
+    * @var Weapon
     */
-   protected $equipment;
+   protected $weapon;
 
    /**
     * Returns the character this relates to
@@ -35,11 +35,11 @@ class CharacterImplantEquipment {
    }
 
    /**
-    * Returns the implant equipment this relates to
+    * Returns the weapon this relates to
     *
-    * @return ImplantEquipment
+    * @return Weapon
     */
-   public function getImplantEquipment() {
-      return $this->equipment;
+   public function getWeapon() {
+      return $this->weapon;
    }
 }
