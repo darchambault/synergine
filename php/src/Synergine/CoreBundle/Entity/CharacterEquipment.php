@@ -11,8 +11,15 @@ use Doctrine\ORM\Mapping as ORM;
 class CharacterEquipment {
    /**
     * @ORM\Id
+    * @ORM\Column(type="integer")
+    * @ORM\GeneratedValue(strategy="AUTO")
+    * @var int
+    */
+   protected $id;
+
+   /**
+    * @ORM\Id
     * @ORM\ManyToOne(targetEntity="Character")
-    * @ORM\JoinColumn(name="character_id", referencedColumnName="id")
     * @var Character
     */
    protected $character;
@@ -20,7 +27,6 @@ class CharacterEquipment {
    /**
     * @ORM\Id
     * @ORM\ManyToOne(targetEntity="Equipment")
-    * @ORM\JoinColumn(name="equipment_id", referencedColumnName="id")
     * @var Equipment
     */
    protected $equipment;

@@ -6,9 +6,9 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity
- * @ORM\Table(name="skill")
+ * @ORM\Table(name="program")
  */
-class Skill {
+class Program {
    /**
     * @ORM\Id
     * @ORM\Column(type="integer")
@@ -24,13 +24,7 @@ class Skill {
    protected $name;
 
    /**
-    * @ORM\ManyToOne(targetEntity="SkillGroup")
-    * @var SkillGroup
-    */
-   protected $group;
-
-   /**
-    * Returns the standard skill's ID
+    * Returns this program's ID
     *
     * @return int
     */
@@ -39,20 +33,11 @@ class Skill {
    }
 
    /**
-    * Returns the standard skill's name
+    * Returns this program's name
     *
     * @return string
     */
    public function getName() {
       return $this->name;
-   }
-
-   /**
-    * Returns the standard skill's group
-    *
-    * @return SkillGroup
-    */
-   public function getGroup() {
-      return $this->group;
    }
 }

@@ -12,7 +12,6 @@ class CharacterSkill {
    /**
     * @ORM\Id
     * @ORM\ManyToOne(targetEntity="Character")
-    * @ORM\JoinColumn(name="character_id", referencedColumnName="id")
     * @var Character
     */
    protected $character;
@@ -20,7 +19,6 @@ class CharacterSkill {
    /**
     * @ORM\Id
     * @ORM\ManyToOne(targetEntity="Skill")
-    * @ORM\JoinColumn(name="skill_id", referencedColumnName="id")
     * @var Skill
     */
    protected $skill;

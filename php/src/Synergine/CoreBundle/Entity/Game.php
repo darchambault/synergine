@@ -26,7 +26,7 @@ class Game {
 
    /**
     * @ORM\OneToOne(targetEntity="Synergine\UserBundle\Entity\User")
-    * @ORM\JoinColumn(name="gamemaster_id", referencedColumnName="id")
+    * @ORM\JoinColumn(name="gamemaster_id")
     * @var Synergine\UserBundle\Entity\User
     */
    protected $gameMaster;

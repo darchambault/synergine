@@ -28,14 +28,12 @@ class Character {
 
    /**
     * @ORM\ManyToOne(targetEntity="Game")
-    * @ORM\JoinColumn(name="game_id", referencedColumnName="id")
     * @var Game
     */
    protected $game;
 
    /**
     * @ORM\OneToOne(targetEntity="Synergine\UserBundle\Entity\User")
-    * @ORM\JoinColumn(name="user_id", referencedColumnName="id")
     * @var Synergine\UserBundle\Entity\User
     */
    protected $user;
@@ -186,20 +184,12 @@ class Character {
 
    /**
     * @ORM\ManyToMany(targetEntity="Quality")
-    * @ORM\JoinTable(name="character_quality",
-    *      joinColumns={@ORM\JoinColumn(name="character_id", referencedColumnName="id")},
-    *      inverseJoinColumns={@ORM\JoinColumn(name="quality_id", referencedColumnName="id")}
-    * )
     * @var Quality[]
     */
    protected $qualities;
 
    /**
     * @ORM\ManyToMany(targetEntity="Maneuver")
-    * @ORM\JoinTable(name="character_maneuver",
-    *      joinColumns={@ORM\JoinColumn(name="character_id", referencedColumnName="id")},
-    *      inverseJoinColumns={@ORM\JoinColumn(name="maneuver_id", referencedColumnName="id")}
-    * )
     * @var Maneuver[]
     */
    protected $maneuvers;
@@ -213,7 +203,7 @@ class Character {
    /**
     * @ORM\Id
     * @ORM\ManyToOne(targetEntity="Character")
-    * @ORM\JoinColumn(name="contact_owner_id", referencedColumnName="id")
+    * @ORM\JoinColumn(name="contact_owner_id")
     * @var Character
     */
    protected $contactOwner;
@@ -244,28 +234,411 @@ class Character {
 
    /**
     * @ORM\OneToMany(targetEntity="CharacterWeapon", mappedBy="character")
-    * @var CharacterWeaponEquipment[]
+    * @var CharacterWeapon[]
     */
    protected $weapons;
 
    /**
     * @ORM\OneToMany(targetEntity="CharacterArmor", mappedBy="character")
-    * @var CharacterArmorEquipment[]
+    * @var CharacterArmor[]
     */
    protected $armor;
 
    /**
     * @ORM\OneToMany(targetEntity="CharacterImplant", mappedBy="character")
-    * @var CharacterImplantEquipment[]
+    * @var CharacterImplant[]
     */
    protected $implants;
 
+   /**
+    * @ORM\OneToMany(targetEntity="CharacterVehicle", mappedBy="character")
+    * @var CharacterVehicle[]
+    */
    protected $vehicles;
-   protected $ids;
-   protected $licences;
+
+   /**
+    * @ORM\OneToMany(targetEntity="CharacterCommlink", mappedBy="character")
+    * @var CharacterCommlink[]
+    */
    protected $commlinks;
-   protected $programs;
+
+   /**
+    * @ORM\OneToMany(targetEntity="CharacterIdentification", mappedBy="character")
+    * @var CharacterIdentifications[]
+    */
+   protected $identifications;
+
+   /**
+    * @ORM\ManyToMany(targetEntity="Spell")
+    * @var Spell[]
+    */
    protected $spells;
-   protected $spirits;
-   protected $powers;
+
+//   protected $spirits;
+//   protected $adeptPowers;
+//   protected $complexForms;
+
+   /**
+    * Returns the character's ID
+    *
+    * @return int
+    */
+   public function getId() {
+      return $this->id;
+   }
+
+   /**
+    * Returns the game which this character is part of
+    *
+    * @return Game
+    */
+   public function getGame() {
+      return $this->game();
+   }
+
+   /**
+    * Returns the user to whom this character belongs to
+    *
+    * @return \Synergine\UserBundle\Entity\User
+    */
+   public function getUser() {
+      return $this->user;
+   }
+
+   /**
+    * Returns the character's name
+    *
+    * @return string
+    */
+   public function getName() {
+      return $this->name;
+   }
+
+   /**
+    * Returns the character's alias
+    *
+    * @return string
+    */
+   public function getAlias() {
+      return $this->alias;
+   }
+
+   /**
+    * Returns the character's metatype
+    *
+    * @return int
+    */
+   public function getMetatype() {
+      return $this->metatype;
+   }
+
+   /**
+    * Returns the character's age
+    *
+    * @return int
+    */
+   public function getAge() {
+      return $this->age;
+   }
+
+   /**
+    * Returns the character's age
+    *
+    * @return int
+    */
+   public function getSex() {
+      return $this->sex;
+   }
+
+   /**
+    * Returns the character's total karma
+    *
+    * @return int
+    */
+   public function getTotalKarma() {
+      return $this->totalKarma;
+   }
+
+   /**
+    * Returns the character's current karma
+    *
+    * @return int
+    */
+   public function getCurrentKarma() {
+      return $this->currentKarma;
+   }
+
+   /**
+    * Returns the character's street cred
+    *
+    * @return int
+    */
+   public function getStreetCred() {
+      return $this->streetCred;
+   }
+
+   /**
+    * Returns the character's notoriety
+    *
+    * @return int
+    */
+   public function getNotoriety() {
+      return $this->notoriety;
+   }
+
+   /**
+    * Returns the character's body attribute
+    *
+    * @return int
+    */
+   public function getBody() {
+      return $this->body;
+   }
+
+   /**
+    * Returns the character's agility attribute
+    *
+    * @return int
+    */
+   public function getAgility() {
+      return $this->agility;
+   }
+
+   /**
+    * Returns the character's reaction attribute
+    *
+    * @return int
+    */
+   public function getReaction() {
+      return $this->reaction;
+   }
+
+   /**
+    * Returns the character's strength attribute
+    *
+    * @return int
+    */
+   public function getStrength() {
+      return $this->strength;
+   }
+
+   /**
+    * Returns the character's charisma attribute
+    *
+    * @return int
+    */
+   public function getCharisma() {
+      return $this->charisma;
+   }
+
+   /**
+    * Returns the character's intuition attribute
+    *
+    * @return int
+    */
+   public function getIntuition() {
+      return $this->intuition;
+   }
+
+   /**
+    * Returns the character's logic attribute
+    *
+    * @return int
+    */
+   public function getLogic() {
+      return $this->logic;
+   }
+
+   /**
+    * Returns the character's willpower attribute
+    *
+    * @return int
+    */
+   public function getWillpower() {
+      return $this->willpower;
+   }
+
+   /**
+    * Returns the character's edge points
+    *
+    * @return int
+    */
+   public function getEdge() {
+      return $this->edge;
+   }
+
+   /**
+    * Returns the character's available edge points
+    *
+    * @return int
+    */
+   public function getAvailableEdge() {
+      return $this->availableEdge;
+   }
+
+   /**
+    * Returns the character's magic attribute
+    *
+    * @return int
+    */
+   public function getMagic() {
+      return $this->magic;
+   }
+
+   /**
+    * Returns the character's skills
+    *
+    * @return Skill[]
+    */
+   public function getSkills() {
+      return $this->skills;
+   }
+
+   /**
+    * Returns the character's knowledge skills
+    *
+    * @return CharacterKnowledgeSkill[]
+    */
+   public function getKnowledgeSkills() {
+      return $this->knowledgeSkills;
+   }
+
+   /**
+    * Returns the character's language skills
+    *
+    * @return CharacterLanguageSkill[]
+    */
+   public function getLanguageSkills() {
+      return $this->languageSkills;
+   }
+
+   /**
+    * Returns the character's qualities
+    *
+    * @return Quality[]
+    */
+   public function getQualities() {
+      return $this->qualities;
+   }
+
+   /**
+    * Returns the character's maneuvers
+    *
+    * @return Maneuver[]
+    */
+   public function getManeuvers() {
+      return $this->maneuvers;
+   }
+
+   /**
+    * Returns the character's contacts
+    *
+    * @return Character[]
+    */
+   public function getContacts() {
+      return $this->contacts;
+   }
+
+   /**
+    * Returns the character's contact owner
+    *
+    * @return \Synergine\CoreBundle\Entity\Character
+    */
+   public function getContactOwner() {
+      return $this->contactOwner;
+   }
+
+   /**
+    * Returns the character's physical damage
+    *
+    * @return int
+    */
+   public function getPhysicalDamage() {
+      return $this->physicalDamage;
+   }
+
+   /**
+    * Returns the character's stun damage
+    *
+    * @return int
+    */
+   public function getStunDamage() {
+      return $this->stunDamage;
+   }
+
+   /**
+    * Returns the character's wounds
+    *
+    * @return CharacterWound[]
+    */
+   public function getWounds() {
+      return $this->wounds;
+   }
+
+   /**
+    * Returns the character's inventory
+    *
+    * @return CharacterEquipment[]
+    */
+   public function getInventory() {
+      return $this->inventory;
+   }
+
+   /**
+    * Returns the character's weapons
+    *
+    * @return CharacterWeapon[]
+    */
+   public function getWeapons() {
+      return $this->weapons;
+   }
+
+   /**
+    * Returns the character's armor
+    *
+    * @return CharacterArmor[]
+    */
+   public function getArmor() {
+      return $this->armor;
+   }
+
+   /**
+    * Returns the character's implants
+    *
+    * @return CharacterImplant[]
+    */
+   public function getImplants() {
+      return $this->implants;
+   }
+
+   /**
+    * Returns the character's vehicles
+    *
+    * @return CharacterVehicle[]
+    */
+   public function getVehicles() {
+      return $this->vehicles;
+   }
+
+   /**
+    * Returns the character's commlinks
+    *
+    * @return CharacterCommlink[]
+    */
+   public function getCommlinks() {
+      return $this->commlinks;
+   }
+
+   /**
+    * Returns the character's identifications
+    *
+    * @return CharacterIdentification[]
+    */
+   public function getIdentifications() {
+      return $this->identifications;
+   }
+
+   public function getSpells() {
+      return $this->spells;
+   }
 }

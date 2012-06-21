@@ -18,7 +18,6 @@ class CharacterWound {
 
    /**
     * @ORM\ManyToOne(targetEntity="Character")
-    * @ORM\JoinColumn(name="character_id", referencedColumnName="id")
     * @var Character
     */
    protected $character;

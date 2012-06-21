@@ -6,9 +6,9 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity
- * @ORM\Table(name="character_implant")
+ * @ORM\Table(name="character_vehicle")
  */
-class CharacterImplant {
+class CharacterVehicle {
    /**
     * @ORM\Id
     * @ORM\OneToOne(targetEntity="CharacterEquipment")

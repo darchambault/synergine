@@ -19,19 +19,18 @@ class Armor {
 
    /**
     * @ORM\OneToOne(targetEntity="Equipment")
-    * @ORM\JoinColumn(name="equipment_id", referencedColumnName="id")
     * @var Equipment
     */
    protected $equipment;
 
    /**
-    * @ORM\Column(type="smallint")
+    * @ORM\Column(type="smallint", name="ballistic_rating")
     * @var int
     */
    protected $ballisticRating;
 
    /**
-    * @ORM\Column(type="smallint")
+    * @ORM\Column(type="smallint", name="impact_rating")
     * @var int
     */
    protected $impactRating;

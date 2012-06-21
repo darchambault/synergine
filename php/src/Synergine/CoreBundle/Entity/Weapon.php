@@ -9,6 +9,9 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="weapon")
  */
 class Weapon {
+   const TYPE_MELEE = 0;
+   const TYPE_RANGED = 1;
+
    const DAMAGETYPE_STUN = 0;
    const DAMAGETYPE_PHYSICAL = 1;
 
@@ -25,28 +28,45 @@ class Weapon {
 
    /**
     * @ORM\OneToOne(targetEntity="Equipment")
-    * @ORM\JoinColumn(name="equipment_id", referencedColumnName="id")
     * @var Equipment
     */
    protected $equipment;
 
    /**
-    * @ORM\Column(type="smallint")
+    * @ORM\Column(type="smallint", name="reach_rating")
+    * @var int
+    */
+   protected $reachRating;
+
+   /**
+    * @ORM\Column(type="smallint", name="damage_rating")
     * @var int
     */
    protected $damageRating;
 
    /**
-    * @ORM\Column(type="smallint")
+    * @ORM\Column(type="smallint", name="damage_type")
     * @var int
     */
    protected $damageType;
 
    /**
-    * @ORM\Column(type="smallint")
+    * @ORM\Column(type="smallint", name="damage_nature")
     * @var int
     */
    protected $damageNature;
+
+   /**
+    * @ORM\Column(type="smallint", name="armor_penetration_rating")
+    * @var int
+    */
+   protected $armorPenetrationRating;
+
+   /**
+    * @ORM\Column(type="smallint", name="ammo_capacity")
+    * @var int
+    */
+   protected $ammoCapacity;
 
    /**
     * Returns the weapon's ID
@@ -76,6 +96,15 @@ class Weapon {
    }
 
    /**
+    * Returns the weapon's reach rating
+    *
+    * @return int
+    */
+   public function getReachRating() {
+      return $this->reachRating;
+   }
+
+   /**
     * Returns the weapon's damage type
     *
     * @return int
@@ -91,5 +120,23 @@ class Weapon {
     */
    public function getDamageNature() {
       return $this->damageNature;
+   }
+
+   /**
+    * Returns the weapon's armor penetration rating
+    *
+    * @return int
+    */
+   public function getArmorPenetrationRating() {
+      return $this->armorPenetrationRating;
+   }
+
+   /**
+    * Returns the weapon's armor penetration
+    *
+    * @return int
+    */
+   public function getAmmoCapacity() {
+      return $this->ammoCapacity;
    }
 }

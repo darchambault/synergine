@@ -22,7 +22,6 @@ class Implant {
 
    /**
     * @ORM\OneToOne(targetEntity="Equipment")
-    * @ORM\JoinColumn(name="equipment_id", referencedColumnName="id")
     * @var Equipment
     */
    protected $equipment;
@@ -34,7 +33,7 @@ class Implant {
    protected $type;
 
    /**
-    * @ORM\Column(type="decimal")
+    * @ORM\Column(type="decimal", name="essence_cost")
     * @var float
     */
    protected $essenceCost;

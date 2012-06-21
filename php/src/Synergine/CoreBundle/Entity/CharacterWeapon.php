@@ -11,35 +11,18 @@ use Doctrine\ORM\Mapping as ORM;
 class CharacterWeapon {
    /**
     * @ORM\Id
-    * @ORM\ManyToOne(targetEntity="Character")
-    * @ORM\JoinColumn(name="character_id", referencedColumnName="id")
-    * @var Character
+    * @ORM\OneToOne(targetEntity="CharacterEquipment")
+    * @ORM\JoinColumn(name="character_equipment_id")
+    * @var CharacterEquipment
     */
-   protected $character;
+   protected $characterEquipment;
 
    /**
-    * @ORM\Id
-    * @ORM\ManyToOne(targetEntity="Weapon")
-    * @ORM\JoinColumn(name="weapon_id", referencedColumnName="id")
-    * @var Weapon
-    */
-   protected $weapon;
-
-   /**
-    * Returns the character this relates to
+    * Returns the character equipment this relates to
     *
-    * @return Character
+    * @return CharacterEquipment
     */
-   public function getCharacter() {
-      return $this->character;
-   }
-
-   /**
-    * Returns the weapon this relates to
-    *
-    * @return Weapon
-    */
-   public function getWeapon() {
-      return $this->weapon;
+   public function getCharacterEquipment() {
+      return $this->characterEquipment;
    }
 }
