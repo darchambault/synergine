@@ -72,4 +72,22 @@ class Game {
    public function getCharacters() {
       return $this->characters;
    }
+
+   /**
+    * Sets this game's name
+    *
+    * @param string $name
+    */
+   public function setName($name) {
+      $this->name = $name;
+   }
+
+   /**
+    * Sets this game's game master
+    *
+    * @param \Synergine\UserBundle\Entity\User $gameMaster
+    */
+   public function setGameMaster(User $gameMaster=null) {
+      $this->gameMaster = $gameMaster;
+   }
 }

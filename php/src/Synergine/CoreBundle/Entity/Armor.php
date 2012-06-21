@@ -70,4 +70,31 @@ class Armor {
    public function getImpactRating() {
       return $this->impactRating;
    }
+
+   /**
+    * Sets the armor's equipment
+    *
+    * @param \Synergine\CoreBundle\Entity\Equipment $equipment
+    */
+   public function setEquipment($equipment) {
+      $this->equipment = $equipment;
+   }
+
+   /**
+    * Sets the armor's ballistic rating
+    *
+    * @param int $ballisticRating
+    */
+   public function setBallisticRating($ballisticRating) {
+      $this->ballisticRating = $ballisticRating;
+   }
+
+   /**
+    * Sets the armor's impact rating
+    *
+    * @param int $impactRating
+    */
+   public function setImpactRating($impactRating) {
+      $this->impactRating = $impactRating;
+   }
 }

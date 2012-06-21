@@ -13,7 +13,7 @@ class CharacterImplant {
     * @ORM\Id
     * @ORM\OneToOne(targetEntity="CharacterEquipment")
     * @ORM\JoinColumn(name="character_equipment_id")
-    * @var Character
+    * @var CharacterEquipment
     */
    protected $characterEquipment;
 
@@ -24,5 +24,14 @@ class CharacterImplant {
     */
    public function getCharacterEquipment() {
       return $this->characterEquipment;
+   }
+
+   /**
+    * Sets the character implant's character equipment
+    *
+    * @param \Synergine\CoreBundle\Entity\CharacterEquipment $characterEquipment
+    */
+   public function setCharacterEquipment(CharacterEquipment $characterEquipment) {
+      $this->characterEquipment = $characterEquipment;
    }
 }

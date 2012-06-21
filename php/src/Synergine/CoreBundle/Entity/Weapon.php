@@ -139,4 +139,67 @@ class Weapon {
    public function getAmmoCapacity() {
       return $this->ammoCapacity;
    }
+
+   /**
+    * Sets this weapon's equipment
+    *
+    * @param \Synergine\CoreBundle\Entity\Equipment $equipment
+    */
+   public function setEquipment(Equipment $equipment) {
+      $this->equipment = $equipment;
+   }
+
+   /**
+    * Sets this weapon's reach rating
+    *
+    * @param int $reachRating
+    */
+   public function setReachRating($reachRating) {
+      $this->reachRating = $reachRating;
+   }
+
+   /**
+    * Sets this weapon's damage rating
+    *
+    * @param int $damageRating
+    */
+   public function setDamageRating($damageRating) {
+      $this->damageRating = $damageRating;
+   }
+
+   /**
+    * Sets this weapon's damage type
+    *
+    * @param int $damageType
+    */
+   public function setDamageType($damageType) {
+      $this->damageType = $damageType;
+   }
+
+   /**
+    * Sets this weapon's damage nature
+    *
+    * @param int $damageNature
+    */
+   public function setDamageNature($damageNature) {
+      $this->damageNature = $damageNature;
+   }
+
+   /**
+    * Sets this weapon's armor penetration rating
+    *
+    * @param int $armorPenetrationRating
+    */
+   public function setArmorPenetrationRating($armorPenetrationRating) {
+      $this->armorPenetrationRating = $armorPenetrationRating;
+   }
+
+   /**
+    * Sets this weapon's ammo capacity
+    *
+    * @param int $ammoCapacity
+    */
+   public function setAmmoCapacity($ammoCapacity) {
+      $this->ammoCapacity = $ammoCapacity;
+   }
 }

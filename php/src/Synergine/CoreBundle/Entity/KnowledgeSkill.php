@@ -27,4 +27,13 @@ class KnowledgeSkill extends Skill {
    public function getType() {
       return $this->type;
    }
+
+   /**
+    * Sets the knowledge skill's type
+    *
+    * @param int $type
+    */
+   public function setType($type) {
+      $this->type = $type;
+   }
 }

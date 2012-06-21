@@ -37,7 +37,7 @@ class Equipment {
 
    /**
     * @ORM\Column(type="integer")
-    * @var bool
+    * @var int
     */
    protected $cost;
 
@@ -99,5 +99,50 @@ class Equipment {
     */
    public function getRating() {
       return $this->rating;
+   }
+
+   /**
+    * Sets the equipment's name
+    *
+    * @param string $name
+    */
+   public function setName($name) {
+      $this->name = $name;
+   }
+
+   /**
+    * Sets the equipment's availability
+    *
+    * @param int $availability
+    */
+   public function setAvailability($availability) {
+      $this->availability = $availability;
+   }
+
+   /**
+    * Sets the equipment's restricted status
+    *
+    * @param boolean $restricted
+    */
+   public function setRestricted($restricted) {
+      $this->restricted = $restricted;
+   }
+
+   /**
+    * Sets the equipment's cost
+    *
+    * @param int $cost
+    */
+   public function setCost($cost) {
+      $this->cost = $cost;
+   }
+
+   /**
+    * Sets the equipment's rating
+    *
+    * @param int $rating
+    */
+   public function setRating($rating) {
+      $this->rating = $rating;
    }
 }

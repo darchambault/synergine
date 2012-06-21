@@ -73,4 +73,31 @@ class Implant {
    public function getEssenceCost() {
       return $this->essenceCost;
    }
+
+   /**
+    * Sets the implant's equipment
+    *
+    * @param \Synergine\CoreBundle\Entity\Equipment $equipment
+    */
+   public function setEquipment(Equipment $equipment) {
+      $this->equipment = $equipment;
+   }
+
+   /**
+    * Sets the implant's type
+    *
+    * @param int $type
+    */
+   public function setType($type) {
+      $this->type = $type;
+   }
+
+   /**
+    * Sets the implant's essence cost
+    *
+    * @param float $essenceCost
+    */
+   public function setEssenceCost($essenceCost) {
+      $this->essenceCost = $essenceCost;
+   }
 }

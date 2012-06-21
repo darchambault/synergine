@@ -164,4 +164,85 @@ class Vehicle {
    public function getSensorRating() {
       return $this->sensorRating;
    }
+
+   /**
+    * Sets the vehicle's equipment
+    *
+    * @param \Synergine\CoreBundle\Entity\Equipment $equipment
+    */
+   public function setEquipment(Equipment $equipment) {
+      $this->equipment = $equipment;
+   }
+
+   /**
+    * Sets this vehicle's type
+    *
+    * @param int $type
+    */
+   public function setType($type) {
+      $this->type = $type;
+   }
+
+   /**
+    * Sets this vehicle's handling rating
+    *
+    * @param int $handlingRating
+    */
+   public function setHandlingRating($handlingRating) {
+      $this->handlingRating = $handlingRating;
+   }
+
+   /**
+    * Sets this vehicle's acceleration rating
+    *
+    * @param int $accelerationRating
+    */
+   public function setAccelerationRating($accelerationRating) {
+      $this->accelerationRating = $accelerationRating;
+   }
+
+   /**
+    * Sets this vehicle's speed rating
+    *
+    * @param int $speedRating
+    */
+   public function setSpeedRating($speedRating) {
+      $this->speedRating = $speedRating;
+   }
+
+   /**
+    * Sets this vehicle's pilot rating
+    *
+    * @param int $pilotRating
+    */
+   public function setPilotRating($pilotRating) {
+      $this->pilotRating = $pilotRating;
+   }
+
+   /**
+    * Sets this vehicle's body rating
+    *
+    * @param int $bodyRating
+    */
+   public function setBodyRating($bodyRating) {
+      $this->bodyRating = $bodyRating;
+   }
+
+   /**
+    * Sets this vehicle's armor rating
+    *
+    * @param int $armorRating
+    */
+   public function setArmorRating($armorRating) {
+      $this->armorRating = $armorRating;
+   }
+
+   /**
+    * Sets this vehicle's sensor rating
+    *
+    * @param int $sensorRating
+    */
+   public function setSensorRating($sensorRating) {
+      $this->sensorRating = $sensorRating;
+   }
 }

@@ -21,7 +21,7 @@ class CharacterLanguageSkill {
     * @ORM\ManyToOne(targetEntity="LanguageSkill")
     * @var LanguageSkill
     */
-   protected $skill;
+   protected $languageSkill;
 
    /**
     * @ORM\Column(type="smallint")
@@ -44,7 +44,7 @@ class CharacterLanguageSkill {
     * @return LanguageSkill
     */
    public function getLanguageSkill() {
-      return $this->skill;
+      return $this->languageSkill;
    }
 
    /**
@@ -54,5 +54,32 @@ class CharacterLanguageSkill {
     */
    public function getLevel() {
       return $this->level;
+   }
+
+   /**
+    * Sets the character language skill's character
+    *
+    * @param \Synergine\CoreBundle\Entity\Character $character
+    */
+   public function setCharacter(Character $character) {
+      $this->character = $character;
+   }
+
+   /**
+    * Sets the character language skill's language skill
+    *
+    * @param \Synergine\CoreBundle\Entity\LanguageSkill $languageSkill
+    */
+   public function setLanguageSkill(LanguageSkill $languageSkill) {
+      $this->languageSkill = $languageSkill;
+   }
+
+   /**
+    * Sets the character language skill's level
+    *
+    * @param int $level
+    */
+   public function setLevel($level) {
+      $this->level = $level;
    }
 }

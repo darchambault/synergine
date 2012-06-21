@@ -46,6 +46,7 @@ class Commlink {
     * @var int
     */
    protected $signalRating;
+
    /**
     * Returns the commlink's ID
     *
@@ -98,5 +99,50 @@ class Commlink {
     */
    public function getSignalRating() {
       return $this->signalRating;
+   }
+
+   /**
+    * Sets the commlink's equipment
+    *
+    * @param \Synergine\CoreBundle\Entity\Equipment $equipment
+    */
+   public function setEquipment(Equipment $equipment) {
+      $this->equipment = $equipment;
+   }
+
+   /**
+    * Sets the commlink's response rating
+    *
+    * @param int $responseRating
+    */
+   public function setResponseRating($responseRating) {
+      $this->responseRating = $responseRating;
+   }
+
+   /**
+    * Sets the commlink's system rating
+    *
+    * @param int $systemRating
+    */
+   public function setSystemRating($systemRating) {
+      $this->systemRating = $systemRating;
+   }
+
+   /**
+    * Sets the commlink's firewall rating
+    *
+    * @param int $firewallRating
+    */
+   public function setFirewallRating($firewallRating) {
+      $this->firewallRating = $firewallRating;
+   }
+
+   /**
+    * Sets the commlink's signal rating
+    *
+    * @param int $signalRating
+    */
+   public function setSignalRating($signalRating) {
+      $this->signalRating = $signalRating;
    }
 }

@@ -21,7 +21,7 @@ class CharacterKnowledgeSkill {
     * @ORM\ManyToOne(targetEntity="KnowledgeSkill")
     * @var KnowledgeSkill
     */
-   protected $skill;
+   protected $knowledgeSkill;
 
    /**
     * @ORM\Column(type="smallint")
@@ -44,7 +44,7 @@ class CharacterKnowledgeSkill {
     * @return KnowledgeSkill
     */
    public function getKnowledgeSkill() {
-      return $this->skill;
+      return $this->knowledgeSkill;
    }
 
    /**
@@ -54,5 +54,32 @@ class CharacterKnowledgeSkill {
     */
    public function getLevel() {
       return $this->level;
+   }
+
+   /**
+    * Sets the character knowledge skill's character
+    *
+    * @param \Synergine\CoreBundle\Entity\Character $character
+    */
+   public function setCharacter(Character $character) {
+      $this->character = $character;
+   }
+
+   /**
+    * Sets the character knowledge skill's knowledge skill
+    *
+    * @param \Synergine\CoreBundle\Entity\KnowledgeSkill $knowledgeSkill
+    */
+   public function setKnowledgeSkill(KnowledgeSkill $knowledgeSkill) {
+      $this->knowledgeSkill = $knowledgeSkill;
+   }
+
+   /**
+    * Sets the character knowledge skill's level
+    *
+    * @param int $level
+    */
+   public function setLevel($level) {
+      $this->level = $level;
    }
 }

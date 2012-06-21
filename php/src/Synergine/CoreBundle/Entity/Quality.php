@@ -55,4 +55,22 @@ class Quality {
    public function getBpCost() {
       return $this->bpCost;
    }
+
+   /**
+    * Sets the quality's name
+    *
+    * @param string $name
+    */
+   public function setName($name) {
+      $this->name = $name;
+   }
+
+   /**
+    * Sets the quality's BP cost
+    *
+    * @param int $bpCost
+    */
+   public function setBpCost($bpCost) {
+      $this->bpCost = $bpCost;
+   }
 }

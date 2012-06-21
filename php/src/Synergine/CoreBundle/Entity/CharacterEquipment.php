@@ -32,6 +32,12 @@ class CharacterEquipment {
    protected $equipment;
 
    /**
+    * @ORM\Column(type="boolean")
+    * @var bool
+    */
+   protected $equipped;
+
+   /**
     * Returns the character this relates to
     *
     * @return Character
@@ -47,5 +53,40 @@ class CharacterEquipment {
     */
    public function getEquipment() {
       return $this->equipment;
+   }
+
+   /**
+    * Indicates if the equipment is currently equipped
+    *
+    * @return bool
+    */
+   public function isEquipped() {
+      return $this->equipped;
+   }
+
+   /**
+    * Sets the character equipment's character
+    * @param \Synergine\CoreBundle\Entity\Character $character
+    */
+   public function setCharacter(Character $character) {
+      $this->character = $character;
+   }
+
+   /**
+    * Sets the character equipment's equipment
+    *
+    * @param \Synergine\CoreBundle\Entity\Equipment $equipment
+    */
+   public function setEquipment(Equipment $equipment) {
+      $this->equipment = $equipment;
+   }
+
+   /**
+    * Sets the character equipment's equipped state
+    *
+    * @param boolean $equipped
+    */
+   public function setEquipped($equipped) {
+      $this->equipped = $equipped;
    }
 }

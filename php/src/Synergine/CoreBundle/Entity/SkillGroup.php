@@ -55,4 +55,13 @@ class SkillGroup {
    public function getSkills() {
       return $this->skills;
    }
+
+   /**
+    * Sets the skill group's name
+    *
+    * @param string $name
+    */
+   public function setName($name) {
+      $this->name = $name;
+   }
 }

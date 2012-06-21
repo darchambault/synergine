@@ -40,4 +40,13 @@ class Maneuver {
    public function getName() {
       return $this->name;
    }
+
+   /**
+    * Sets the maneuver's name
+    *
+    * @param string $name
+    */
+   public function setName($name) {
+      $this->name = $name;
+   }
 }

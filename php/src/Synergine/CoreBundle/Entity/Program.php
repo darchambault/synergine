@@ -40,4 +40,13 @@ class Program {
    public function getName() {
       return $this->name;
    }
+
+   /**
+    * Sets the program's name
+    *
+    * @param string $name
+    */
+   public function setName($name) {
+      $this->name = $name;
+   }
 }

@@ -55,4 +55,31 @@ class CharacterSkill {
    public function getLevel() {
       return $this->level;
    }
+
+   /**
+    * Sets the character skill's character
+    *
+    * @param \Synergine\CoreBundle\Entity\Character $character
+    */
+   public function setCharacter(Character $character) {
+      $this->character = $character;
+   }
+
+   /**
+    * Sets the character skill's skill
+    *
+    * @param \Synergine\CoreBundle\Entity\Skill $skill
+    */
+   public function setSkill(Skill $skill) {
+      $this->skill = $skill;
+   }
+
+   /**
+    * Sets the character skill's level
+    *
+    * @param int $level
+    */
+   public function setLevel($level) {
+      $this->level = $level;
+   }
 }

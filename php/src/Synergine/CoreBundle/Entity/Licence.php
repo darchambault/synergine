@@ -13,7 +13,7 @@ class Licence {
     * @ORM\Id
     * @ORM\OneToOne(targetEntity="CharacterEquipment")
     * @ORM\JoinColumn(name="character_equipment_id")
-    * @var string
+    * @var CharacterEquipment
     */
    protected $characterEquipment;
 
@@ -55,5 +55,32 @@ class Licence {
     */
    public function getRating() {
       return $this->rating;
+   }
+
+   /**
+    * Sets the character equipment this licence is for
+    *
+    * @param \Synergine\CoreBundle\Entity\CharacterEquipment $characterEquipment
+    */
+   public function setCharacterEquipment(CharacterEquipment $characterEquipment) {
+      $this->characterEquipment = $characterEquipment;
+   }
+
+   /**
+    * Sets the character identification this licence is bound to
+    *
+    * @param \Synergine\CoreBundle\Entity\CharacterIdentification $characterIdentification
+    */
+   public function setCharacterIdentification(CharacterIdentification $characterIdentification) {
+      $this->characterIdentification = $characterIdentification;
+   }
+
+   /**
+    * Sets the licence's rating
+    *
+    * @param int $rating
+    */
+   public function setRating($rating) {
+      $this->rating = $rating;
    }
 }

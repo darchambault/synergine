@@ -13,7 +13,7 @@ class CharacterArmor {
     * @ORM\Id
     * @ORM\OneToOne(targetEntity="CharacterEquipment")
     * @ORM\JoinColumn(name="character_equipment_id")
-    * @var Character
+    * @var CharacterEquipment
     */
    protected $characterEquipment;
 
@@ -54,5 +54,31 @@ class CharacterArmor {
     */
    public function getImpactDamage() {
       return $this->impactDamage;
+   }
+
+   /**
+    * Sets the character armor's character equipment
+    *
+    * @param \Synergine\CoreBundle\Entity\CharacterEquipment $characterEquipment
+    */
+   public function setCharacterEquipment(CharacterEquipment $characterEquipment) {
+      $this->characterEquipment = $characterEquipment;
+   }
+
+   /**
+    * Sets the character armor's ballistic damage
+    *
+    * @param int $ballisticDamage
+    */
+   public function setBallisticDamage($ballisticDamage) {
+      $this->ballisticDamage = $ballisticDamage;
+   }
+
+   /**
+    * Sets the character armor's impact damage
+    * @param int $impactDamage
+    */
+   public function setImpactDamage($impactDamage) {
+      $this->impactDamage = $impactDamage;
    }
 }

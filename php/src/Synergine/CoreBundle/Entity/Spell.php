@@ -100,4 +100,48 @@ class Spell {
    public function getDamageValue() {
       return $this->damageValue;
    }
+
+   /**
+    * Sets this spell's name
+    *
+    * @param string $name
+    */
+   public function setName($name) {
+      $this->name = $name;
+   }
+
+   /**
+    * Sets this spell's type
+    * @param int $type
+    */
+   public function setType($type) {
+      $this->type = $type;
+   }
+
+   /**
+    * Sets this spell's range rating
+    *
+    * @param int $rangeRating
+    */
+   public function setRangeRating($rangeRating) {
+      $this->rangeRating = $rangeRating;
+   }
+
+   /**
+    * Sets this spell's duration rating
+    *
+    * @param int $durationRating
+    */
+   public function setDurationRating($durationRating) {
+      $this->durationRating = $durationRating;
+   }
+
+   /**
+    * Sets this spell's damage value
+    *
+    * @param int $damageValue
+    */
+   public function setDamageValue($damageValue) {
+      $this->damageValue = $damageValue;
+   }
 }

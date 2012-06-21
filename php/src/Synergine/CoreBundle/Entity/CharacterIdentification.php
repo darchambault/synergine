@@ -76,4 +76,31 @@ class CharacterIdentification {
    public function getLicences() {
       return $this->licences;
    }
+
+   /**
+    * Sets the character identification's character
+    *
+    * @param \Synergine\CoreBundle\Entity\Character $character
+    */
+   public function setCharacter(Character $character) {
+      $this->character = $character;
+   }
+
+   /**
+    * Sets the character identification's name
+    *
+    * @param string $name
+    */
+   public function setName($name) {
+      $this->name = $name;
+   }
+
+   /**
+    * Sets the character identification's rating
+    *
+    * @param int $rating
+    */
+   public function setRating($rating) {
+      $this->rating = $rating;
+   }
 }

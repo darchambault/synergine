@@ -69,12 +69,6 @@ class Character {
    protected $sex;
 
    /**
-    * @ORM\Column(type="integer")
-    * @var int
-    */
-   protected $nuyen;
-
-   /**
     * @ORM\Column(type="integer", name="total_karma")
     * @var int
     */
@@ -638,7 +632,263 @@ class Character {
       return $this->identifications;
    }
 
+   /**
+    * Returns the character's spells
+    *
+    * @return Spell[]
+    */
    public function getSpells() {
       return $this->spells;
+   }
+
+   /**
+    * Sets the game which the character belongs to
+    *
+    * @param \Synergine\CoreBundle\Entity\Game $game
+    */
+   public function setGame(Game $game) {
+      $this->game = $game;
+   }
+
+   /**
+    * Sets the user which the character belongs to
+    *
+    * @param \Synergine\UserBundle\Entity\User $user
+    */
+   public function setUser(User $user) {
+      $this->user = $user;
+   }
+
+   /**
+    * Sets the character's name
+    *
+    * @param string $name
+    */
+   public function setName($name) {
+      $this->name = $name;
+   }
+
+   /**
+    * Sets the character's alias
+    *
+    * @param string $alias
+    */
+   public function setAlias($alias) {
+      $this->alias = $alias;
+   }
+
+   /**
+    * Sets the character's metatype
+    *
+    * @param int $metatype
+    */
+   public function setMetatype($metatype) {
+      $this->metatype = $metatype;
+   }
+
+   /**
+    * Sets the character's age
+    *
+    * @param int $age
+    */
+   public function setAge($age) {
+      $this->age = $age;
+   }
+
+   /**
+    * Sets the character's sex
+    *
+    * @param int $sex
+    */
+   public function setSex($sex) {
+      $this->sex = $sex;
+   }
+
+   /**
+    * Sets the character's total karma
+    *
+    * @param int $totalKarma
+    */
+   public function setTotalKarma($totalKarma) {
+      $this->totalKarma = $totalKarma;
+   }
+
+   /**
+    * Sets the character's current karma
+    *
+    * @param int $currentKarma
+    */
+   public function setCurrentKarma($currentKarma) {
+      $this->currentKarma = $currentKarma;
+   }
+
+   /**
+    * Sets the character's street cred
+    *
+    * @param int $streetCred
+    */
+   public function setStreetCred($streetCred) {
+      $this->streetCred = $streetCred;
+   }
+
+   /**
+    * Sets the character's notoriety
+    * @param int $notoriety
+    */
+   public function setNotoriety($notoriety) {
+      $this->notoriety = $notoriety;
+   }
+
+   /**
+    * Sets the character's body attribute
+    *
+    * @param int $body
+    */
+   public function setBody($body) {
+      $this->body = $body;
+   }
+
+   /**
+    * Sets the character's agility attribute
+    *
+    * @param int $agility
+    */
+   public function setAgility($agility) {
+      $this->agility = $agility;
+   }
+
+   /**
+    * Sets the character's reaction attribute
+    *
+    * @param int $reaction
+    */
+   public function setReaction($reaction) {
+      $this->reaction = $reaction;
+   }
+
+   /**
+    * Sets the character's strength attribute
+    *
+    * @param int $strength
+    */
+   public function setStrength($strength) {
+      $this->strength = $strength;
+   }
+
+   /**
+    * Sets the character's charisma attribute
+    *
+    * @param int $charisma
+    */
+   public function setCharisma($charisma) {
+      $this->charisma = $charisma;
+   }
+
+   /**
+    * Sets the character's intuition attribute
+    *
+    * @param int $intuition
+    */
+   public function setIntuition($intuition) {
+      $this->intuition = $intuition;
+   }
+
+   /**
+    * Sets the character's logic attribute
+    *
+    * @param int $logic
+    */
+   public function setLogic($logic) {
+      $this->logic = $logic;
+   }
+
+   /**
+    * Sets the character's willpower attribute
+    *
+    * @param int $willpower
+    */
+   public function setWillpower($willpower) {
+      $this->willpower = $willpower;
+   }
+
+   /**
+    * Sets the character's edge points
+    *
+    * @param int $edge
+    */
+   public function setEdge($edge) {
+      $this->edge = $edge;
+   }
+
+   /**
+    * Sets the character's available edge points
+    *
+    * @param int $availableEdge
+    */
+   public function setAvailableEdge($availableEdge) {
+      $this->availableEdge = $availableEdge;
+   }
+
+   /**
+    * Sets the character's magic attribute
+    *
+    * @param int $magic
+    */
+   public function setMagic($magic) {
+      $this->magic = $magic;
+   }
+
+   /**
+    * Sets the character's qualities
+    *
+    * @param Quality[] $qualities
+    */
+   public function setQualities($qualities) {
+      $this->qualities = $qualities;
+   }
+
+   /**
+    * Sets the character's maneuvers
+    *
+    * @param Maneuver[] $maneuvers
+    */
+   public function setManeuvers($maneuvers) {
+      $this->maneuvers = $maneuvers;
+   }
+
+   /**
+    * Sets the character's contact owner
+    *
+    * @param \Synergine\CoreBundle\Entity\Character $contactOwner
+    */
+   public function setContactOwner(Character $contactOwner) {
+      $this->contactOwner = $contactOwner;
+   }
+
+   /**
+    * Sets the character's physical damage
+    *
+    * @param int $physicalDamage
+    */
+   public function setPhysicalDamage($physicalDamage) {
+      $this->physicalDamage = $physicalDamage;
+   }
+
+   /**
+    * Sets the character's stun damage
+    *
+    * @param int $stunDamage
+    */
+   public function setStunDamage($stunDamage) {
+      $this->stunDamage = $stunDamage;
+   }
+
+   /**
+    * Sets the character's spells
+    *
+    * @param Spell[] $spells
+    */
+   public function setSpells($spells) {
+      $this->spells = $spells;
    }
 }

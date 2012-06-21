@@ -55,4 +55,22 @@ class Skill {
    public function getGroup() {
       return $this->group;
    }
+
+   /**
+    * Sets the skill's name
+    *
+    * @param string $name
+    */
+   public function setName($name) {
+      $this->name = $name;
+   }
+
+   /**
+    * Sets the skill group this skill belongs to
+    *
+    * @param \Synergine\CoreBundle\Entity\SkillGroup $group
+    */
+   public function setGroup(SkillGroup $group=null) {
+      $this->group = $group;
+   }
 }

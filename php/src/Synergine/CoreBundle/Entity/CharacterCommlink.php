@@ -13,7 +13,7 @@ class CharacterCommlink {
     * @ORM\Id
     * @ORM\OneToOne(targetEntity="CharacterEquipment")
     * @ORM\JoinColumn(name="character_equipment_id")
-    * @var Character
+    * @var CharacterEquipment
     */
    protected $characterEquipment;
 
@@ -42,5 +42,23 @@ class CharacterCommlink {
     */
    public function getPrograms() {
       return $this->programs;
+   }
+
+   /**
+    * Sets the character commlink's character equipment
+    *
+    * @param \Synergine\CoreBundle\Entity\CharacterEquipment $characterEquipment
+    */
+   public function setCharacterEquipment(CharacterEquipment $characterEquipment) {
+      $this->characterEquipment = $characterEquipment;
+   }
+
+   /**
+    * Sets the character commlink's programs
+    *
+    * @param Program[] $programs
+    */
+   public function setPrograms($programs) {
+      $this->programs = $programs;
    }
 }
