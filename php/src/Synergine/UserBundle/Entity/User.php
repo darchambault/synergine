@@ -5,8 +5,7 @@ namespace Synergine\UserBundle\Entity;
 use FOS\UserBundle\Entity\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
-use Synergine\CoreBundle\Entity\Game;
-use Synergine\CoreBundle\Entity\Character;
+use Synergine\CoreBundle\Entity\BaseGame;
 
 /**
  * @ORM\Entity
@@ -32,14 +31,8 @@ class User extends BaseUser {
    protected $groups;
 
    /**
-    * @ORM\OneToMany(targetEntity="Synergine\CoreBundle\Entity\Game", mappedBy="gameMaster")
-    * @var Synergine\CoreBundle\Entity\Game[]
+    * @ORM\OneToMany(targetEntity="Synergine\CoreBundle\Entity\BaseGame", mappedBy="gameMaster")
+    * @var Synergine\CoreBundle\Entity\BaseGame[]
     */
    protected $games;
-
-   /**
-    * @ORM\OneToMany(targetEntity="Synergine\CoreBundle\Entity\Character", mappedBy="user")
-    * @var Synergine\CoreBundle\Entity\Character[]
-    */
-   protected $characters;
 }
