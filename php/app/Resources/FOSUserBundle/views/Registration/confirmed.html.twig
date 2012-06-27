@@ -1,0 +1,19 @@
+{% extends "::base.html.twig" %}
+
+{% block header %}
+<h1 class="registration">Registration</h1>
+{% endblock header %}
+
+{% block body %}
+    <div class="registration well">
+        <p>{{ 'registration.confirmed'|trans({'%username%': user.username}, 'FOSUserBundle') }}</p>
+    {% if app.session is not empty %}
+        {% set targetUrl = app.session.get('_security.target_path') %}
+        {% if targetUrl is not empty %}
+        <p><a href="{{ targetUrl }}">{{ 'registration.back'|trans({}, 'FOSUserBundle') }}</a></p>
+        {% else %}
+        <p><a href="{{ path('home') }}">Go to home page</a></p>
+        {% endif %}
+    {% endif %}
+    </div>
+{% endblock body %}

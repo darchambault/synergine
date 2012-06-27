@@ -74,6 +74,12 @@ form.registration input[type=password] {
    width: 150px;
 }
 
+div.registration {
+   width: 500px;
+   margin: 0 auto;
+   text-align: center;
+}
+
 /** resetting **/
 
 h1.reset_request,

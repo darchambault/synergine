@@ -1,7 +1,9 @@
 .idea
 synergine.iml
-php/app/cache/
-php/app/logs/
-php/vendor/
-php/web/bundles/
-php/app/config/parameters.ini
+/php/web/bundles/
+/php/app/bootstrap*
+/php/app/cache/*
+/php/app/logs/*
+/php/vendor/
+/php/app/config/parameters.ini
+

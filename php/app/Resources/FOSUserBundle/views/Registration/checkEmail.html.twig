@@ -1,0 +1,11 @@
+{% extends "::base.html.twig" %}
+
+{% block header %}
+<h1 class="registration">Registration</h1>
+{% endblock header %}
+
+{% block body %}
+    <div class="registration well">
+        <p>{{ 'registration.check_email'|trans({'%email%': user.email}, 'FOSUserBundle') }}</p>
+    </div>
+{% endblock body %}
