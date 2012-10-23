@@ -12,6 +12,9 @@ class HomeController extends Controller {
     * @Template()
     */
    public function indexAction() {
-      return array();
+      $games = $this->getDoctrine()->getRepository('SynergineCoreBundle:Game')->findBy();
+      return array(
+         'games' => array()
+      );
    }
 }

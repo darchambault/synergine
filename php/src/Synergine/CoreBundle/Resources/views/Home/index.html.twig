@@ -1,5 +1,15 @@
 {% extends '::base.html.twig' %}
 
 {% block body %}
-Hello world!
+<section class="games">
+    {% if characters|length > 0 %}
+    <ul>
+        {% for character in characters %}
+        <li><a href="">{{ character.name|e }}</a></li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p>You are not currently part of any game.</p>
+    {% endif %}
+</section>
 {% endblock %}
